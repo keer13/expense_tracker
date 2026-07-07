@@ -60,23 +60,3 @@ Open [http://localhost:5173](http://localhost:5173) in your web browser.
 
 ---
 
-## 🔒 Firebase Security Rules (Recommended)
-
-To protect user transaction privacy, ensure you apply these rules in your Firestore Database settings:
-
-```javascript
-rules_version = '2';
-service cloud.firestore {
-  match /databases/{database}/documents {
-    // User collection rules
-    match /users/{userId} {
-      allow read, write: if request.auth != null && request.auth.uid == userId;
-    }
-    // Expense collection rules
-    match /expenses/{expenseId} {
-      allow read, write: if request.auth != null && request.auth.uid == resource.data.userId;
-      allow create: if request.auth != null && request.auth.uid == request.resource.data.userId;
-    }
-  }
-}
-```
