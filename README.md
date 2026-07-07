@@ -3,8 +3,7 @@
 A modern full-stack Expense Tracker web application built using React, TypeScript, Vite, Tailwind CSS, and Firebase.
 
 ## 🚀 Live Demo
-
-Coming Soon (Vercel)
+https://expense-tracker-3uow2ujav-keer13s-projects.vercel.app
 
 
 ---
